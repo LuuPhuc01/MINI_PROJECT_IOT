@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      
+        <meta charset ="utf-8">
+        <title>Mini Project</title>
+        <link rel = "stylesheet" type = "text/css" href = "{{ url_for('static',filename='css/unite.css') }}"> 
+        <!-- <link rel = "stylesheet" type = "text/css" href = "/IOT/static/css/unite.css">  -->
+    </head>
+    <body>
+      <script>
+        function data() {
+            if ("{{ flash_message }}" == "True") {
+        alert("[YOUR_MESSAGE_HERE]");
+      }
+    }
+      </script>
+        <div id = "menu_top">
+            <ul>
+                <li><a href="/" title ="Trang chủ" >Home</a> </li>
+                <li>
+                  <form method="post" action="/" >               
+                  <input type="submit" value="UPDATE" name="UPDATE"/> 
+                 </form>
+              </li>
+            </ul>
+            </div>
+
+        </div>
+        <div id ="main">
+            <div class ="card Temperature">
+                <img src="https://cdn-icons-png.flaticon.com/512/76/76660.png"/>
+                <h2>Temperature</h2>
+                <h1 ><span id="temp"></span>{{data_temp}}*C</h1>
+            </div>
+            <div class ="card Humidity">
+                <img src="https://orioni.co/nmedia/png/humidity-4401.png"/>      
+                <h2>Humidity</h2>
+                <h1> <span id="hum"></span>{{data_hum}} % </h1>
+            </div>
+            <div class ="card Soil">
+              <img src="https://cdn-icons-png.flaticon.com/512/116/116251.png"/>
+              
+              <h2>Rainmeter</h2>
+              <h1 ><span id="soil"></span>{{data_rain}}%</h1>
+
+          </div>
+        </div>
+    </body>
+</html>
+
